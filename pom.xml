@@ -14,9 +14,23 @@
     <modules>
         <module>asm</module>
         <module>algorithm</module>
+        <module>common</module>
+        <module>redis</module>
+        <module>designPattern</module>
+        <module>exercise</module>
+        <module>netty</module>
+        <module>java8</module>
+        <module>utilFramework</module>
     </modules>
 
     <properties>
+        <spring.version>4.3.4.RELEASE</spring.version>
+        <guava.version>19.0</guava.version>
+        <tomcat.version>8.5.6</tomcat.version>
+        <version.redis>2.7.3</version.redis>
+        <kotlin.version>1.1.2-3</kotlin.version>
+        <hazelcast.version>3.8.1</hazelcast.version>
+        <presto.version>0.176</presto.version>
     </properties>
 
     <dependencyManagement>
