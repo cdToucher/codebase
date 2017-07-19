@@ -20,6 +20,7 @@
         <module>exercise</module>
         <module>netty</module>
         <module>java8</module>
+        <module>shell</module>
         <module>utilFramework</module>
     </modules>
 
