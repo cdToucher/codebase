@@ -12,8 +12,8 @@ import com.google.common.base.Preconditions;
 public class PreconditionsTest {
 
     public static void main(String[] args) {
-        boolean bool = Boolean.TRUE;
-        Preconditions.checkArgument(bool);
+        boolean bool = Boolean.FALSE;
+//        Preconditions.checkArgument(bool);
         Preconditions.checkArgument(bool, "wrong1");
         Preconditions.checkArgument(bool, "+ %s + ", "wrong2");
         Preconditions.checkElementIndex(1, 40);

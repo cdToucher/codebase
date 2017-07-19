@@ -11,7 +11,6 @@ import com.google.common.cache.LoadingCache;
  */
 public class CacheTest {
 
-
     public static void main(String[] args) {
 
         CacheLoader<String, String> cacheLoader = new CacheLoader<String, String>() {
@@ -21,10 +20,9 @@ public class CacheTest {
             }
         };
 
-        LoadingCache<String, String> loadingCache = CacheBuilder
-                .newBuilder()
+        LoadingCache<String, String> loadingCache = CacheBuilder.newBuilder()
                 .build(cacheLoader);
-
+        loadingCache.asMap();
     }
 
 }

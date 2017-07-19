@@ -16,7 +16,7 @@ public interface Base {
         arr[j] = temp;
     }
 
-    default void gotIt(int index){
+    default void gotIt(int index) {
         System.out.println(index);
     }
 }

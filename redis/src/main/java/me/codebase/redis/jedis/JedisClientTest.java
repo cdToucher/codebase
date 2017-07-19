@@ -16,6 +16,7 @@ public class JedisClientTest {
     static final int defaultPort = 6379;
 
     public static void main(String[] args) {
+        JedisClientTest();
     }
 
     private static void SharedJedisTest() {
