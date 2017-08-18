@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,6 +22,8 @@
         <module>java8</module>
         <module>shell</module>
         <module>utilFramework</module>
+        <module>sso</module>
+        <module>servlet</module>
     </modules>
 
     <properties>
@@ -36,6 +38,16 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>uyun.octopus</groupId>
+                <artifactId>compute-model</artifactId>
+                <version>2.0.0-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
@@ -172,7 +184,7 @@
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
-                <version>3.2.4</version>
+                <version>3.2.5</version>
             </dependency>
 
             <dependency>

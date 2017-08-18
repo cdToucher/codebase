@@ -13,7 +13,6 @@ public class MergeSort implements Sort {
         sort(arr, 0, arr.length - 1, helper);
     }
 
-
     private static void sort(int[] a, int lo, int hi, int[] helper) {
         if (lo >= hi) return;
         int mid = (lo + hi) / 2;
@@ -36,7 +35,6 @@ public class MergeSort implements Sort {
             else
                 a[k] = helper[j++];
         }
-
     }
 
     public static void main(String[] args) {

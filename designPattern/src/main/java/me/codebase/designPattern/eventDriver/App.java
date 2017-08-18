@@ -1,6 +1,7 @@
 package me.codebase.designPattern.eventDriver;
 
-import me.codebase.beans.User;
+
+import me.codebase.designPattern.bean.User;
 
 /**
  * Created by chendong on 2017/5/10.

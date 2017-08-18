@@ -12,5 +12,16 @@
     <description>This module is temporary store the code for some aim.</description>
     <artifactId>exercise</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>uyun.octopus</groupId>
+            <artifactId>compute-model</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>
