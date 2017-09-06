@@ -24,6 +24,7 @@
         <module>utilFramework</module>
         <module>sso</module>
         <module>servlet</module>
+        <module>number2big</module>
     </modules>
 
     <properties>
