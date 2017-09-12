@@ -16,7 +16,8 @@ public class ServiceTest {
 
     public static void main(String[] args) {
         double input = 1234319.123;
-        System.out.println(translate("1800002733300328311117"));
+        System.out.println(translate("1800002733300328311110"));
+        System.out.println(translate("1800000000000000000000"));
         System.out.println(translate(1234319.123));
     }
 

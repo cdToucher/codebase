@@ -25,6 +25,7 @@
         <module>sso</module>
         <module>servlet</module>
         <module>number2big</module>
+        <module>yml</module>
     </modules>
 
     <properties>
