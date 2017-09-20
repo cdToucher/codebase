@@ -7,7 +7,7 @@ package me.codebase.algorithm;
  */
 public interface Base {
 
-    int[] arr = {0, 2, 4, 6, 8, 5, 3, 7, 9, 1};
+    int[] arr = {0, 2, 4, 6, 8, 5, 3, 7, 9, 1, 400};
     int[] orderedArr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     default void swap(int[] arr, int i, int j) {
