@@ -6,11 +6,12 @@ import java.util.Stack;
 /**
  * Created by chendong on 2017/9/19.
  */
-public class BucketSort implements Sort {
+public class RadixSort implements Sort {
 
     @Override
     public void sort(int[] arr) {
 
+        // 正数排序
         Stack<Integer>[] buckets = new Stack[10];
         for (int i = 0; i < 10; i++) {
             buckets[i] = new Stack<>();
@@ -26,6 +27,7 @@ public class BucketSort implements Sort {
             for (int a : arr) {
                 //获取某位的数值
                 char[] chars = String.valueOf(a).toCharArray();
+
                 int val = Character.digit(chars[i], 10);
                 buckets[val].push(a);
             }
@@ -41,7 +43,7 @@ public class BucketSort implements Sort {
     }
 
     public static void main(String[] args) {
-        new BucketSort().sort(arr);
+        new RadixSort().sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
