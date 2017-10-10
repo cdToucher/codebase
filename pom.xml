@@ -26,6 +26,7 @@
         <module>servlet</module>
         <module>number2big</module>
         <module>yml</module>
+        <module>leetcode</module>
     </modules>
 
     <properties>
