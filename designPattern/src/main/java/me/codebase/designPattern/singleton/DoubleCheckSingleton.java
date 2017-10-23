@@ -7,7 +7,7 @@ package me.codebase.designPattern.singleton;
  */
 public class DoubleCheckSingleton {
 
-    private static DoubleCheckSingleton instance;
+    private static volatile DoubleCheckSingleton instance;
 
     private DoubleCheckSingleton() {
 

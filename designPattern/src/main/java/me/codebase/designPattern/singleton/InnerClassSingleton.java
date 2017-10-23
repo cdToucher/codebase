@@ -7,22 +7,16 @@ package me.codebase.designPattern.singleton;
  */
 public class InnerClassSingleton {
 
-    private static InnerClass instance = new InnerClass();
+    private InnerClassSingleton(){
 
-    private static class InnerClass {
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        private String name;
     }
 
-    public static InnerClass getInstance(){
-        return instance;
+    private static class InnerClass {
+        private static final InnerClassSingleton instance = new InnerClassSingleton();
+    }
+
+    public static InnerClassSingleton getInstance(){
+        return InnerClass.instance;
     }
 
 }

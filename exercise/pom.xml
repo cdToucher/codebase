@@ -21,6 +21,10 @@
             <groupId>uyun.octopus</groupId>
             <artifactId>compute-model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
 
     </dependencies>
 
