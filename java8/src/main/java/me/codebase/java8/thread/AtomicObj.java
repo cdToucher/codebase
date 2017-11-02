@@ -2,8 +2,9 @@ package me.codebase.java8.thread;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static me.codebase.java8.thread.util.StateControl.shutdown;
 
 /**
  * Created by chendong on 2017/10/23.
@@ -11,23 +12,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * class atomicXX 利用了cpu的特性保证了原子性
  */
 public class AtomicObj {
-
-    public static void shutdown(ExecutorService executor, long seconds) {
-        try {
-            System.out.println("attempt to shutdown executor");
-            executor.shutdown();
-            executor.awaitTermination(seconds, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            System.err.println("tasks interrupted");
-        } finally {
-            if (!executor.isTerminated()) {
-                System.err.println("cancel non-finished tasks right now");
-            }
-            executor.shutdownNow();
-            System.out.println("shutdown finished");
-        }
-    }
-
 
     public static void main(String[] args) {
         AtomicInteger atomicInteger = new AtomicInteger(0);
