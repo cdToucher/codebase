@@ -9,12 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>designPattern</artifactId>
+    <artifactId>io</artifactId>
+
+
+    <developers>
+        <developer>
+            <name>chendong</name>
+            <email>614141165@qq.com</email>
+            <timezone>GMT-8</timezone>
+        </developer>
+    </developers>
 
     <dependencies>
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
     </dependencies>
+
 </project>
