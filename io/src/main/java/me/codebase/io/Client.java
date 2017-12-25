@@ -8,7 +8,6 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.Charset;
-import java.util.List;
 
 /**
  * Created by chendong on 2017/12/21.
@@ -16,19 +15,16 @@ import java.util.List;
 public class Client implements Constants {
 
     public static void main(String[] args) throws IOException {
-        client();
+        for (int i = 0; i < 2; i++) {
+            client();
+        }
     }
-
 
     private static void client() throws IOException {
         Socket socket = new Socket();
         socket.connect(new InetSocketAddress(blockedIOPort));
         OutputStream outputStream = socket.getOutputStream();
-        List<String> lines = Resources.readLines(Resources.getResource(".gitignore"), Charset.defaultCharset());
-        for (String str : lines) {
-            outputStream.write(str.getBytes());
-        }
-        outputStream.write(String.valueOf(Math.random()).getBytes());
+        Resources.asByteSource(Resources.getResource(".gitignore")).copyTo(outputStream);
         IOUtils.closeQuietly(outputStream);
     }
 }

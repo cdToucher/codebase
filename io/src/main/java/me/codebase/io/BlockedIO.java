@@ -31,7 +31,7 @@ public class BlockedIO implements Constants {
 
         while (true) {
             Socket socket = serverSocket.accept();
-            InputStream inputStream = socket.getInputStream();
+            InputStream inputStream = socket.getInputStream();  // blocked
             System.out.println(IOUtils.toString(inputStream));
 //       BufferedReader inputStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             IOUtils.closeQuietly(inputStream);
