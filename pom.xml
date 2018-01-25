@@ -27,6 +27,7 @@
         <module>number2big</module>
         <module>yml</module>
         <module>io</module>
+        <module>runtime</module>
     </modules>
 
     <properties>

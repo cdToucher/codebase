@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.nio.charset.Charset;
 
 /**
  * Created by chendong on 2017/12/21.
@@ -15,7 +14,7 @@ import java.nio.charset.Charset;
 public class Client implements Constants {
 
     public static void main(String[] args) throws IOException {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             client();
         }
     }

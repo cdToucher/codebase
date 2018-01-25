@@ -8,6 +8,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.channels.spi.SelectorProvider;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Set;
@@ -53,7 +54,7 @@ public class UnBlockedServer implements Constants {
                         continue;
                     }
                     // do something
-                    System.out.println(new String(buffer.array(), Charset.defaultCharset()));
+                    System.out.print(new String(buffer.array(), Charset.defaultCharset()));
                 }
                 keys.remove(key);
             }
