@@ -14,14 +14,12 @@ import java.net.Socket;
 public class Client implements Constants {
 
     public static void main(String[] args) throws IOException {
-        for (int i = 0; i < 5; i++) {
-            client();
-        }
+        client();
     }
 
     private static void client() throws IOException {
         Socket socket = new Socket();
-        socket.connect(new InetSocketAddress(blockedIOPort));
+        socket.connect(new InetSocketAddress("10.1.251.16", blockedIOPort));
         OutputStream outputStream = socket.getOutputStream();
         Resources.asByteSource(Resources.getResource(".gitignore")).copyTo(outputStream);
         IOUtils.closeQuietly(outputStream);
