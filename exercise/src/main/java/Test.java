@@ -1,3 +1,7 @@
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -6,9 +10,20 @@ import java.util.concurrent.Executors;
  */
 public class Test {
 
+    private static final int foo = 1;
+    private static final Map<String, String> fooMap = new HashMap<>();
+
+    private static String fooStr = "2";
+
+    static {
+        fooMap.put("3", "3");
+        System.out.println(foo);
+        System.out.println(fooMap.get("3"));
+        System.out.println(fooStr);
+    }
 
     public static void main(String[] args) throws InterruptedException {
-        Test obj1 = new Test();
+      /*  Test obj1 = new Test();
         obj1.setName("1");
         obj1.setTime(1000);
         Test obj2 = new Test();
@@ -16,7 +31,18 @@ public class Test {
         obj2.setTime(500);
 
         new Thread(new DeadLock(obj1, obj2)).start();
-        new Thread(new DeadLock(obj2, obj1)).start();
+        new Thread(new DeadLock(obj2, obj1)).start();*/
+      Test test = new Test();
+    }
+
+    public Test() {
+        System.out.println("6");
+    }
+
+    @PostConstruct
+    @PreDestroy
+    public void init(){
+        System.out.println("5");
     }
 
     public String getName() {
@@ -55,7 +81,7 @@ public class Test {
                 try {
                     System.out.println(obj1.getName());
                     Thread.sleep(obj1.getTime());
-                    synchronized (obj2){
+                    synchronized (obj2) {
                         System.out.println(obj2.getName());
                     }
                 } catch (InterruptedException e) {
