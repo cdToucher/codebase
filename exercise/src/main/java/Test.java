@@ -1,12 +1,13 @@
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.TreeMap;
+import java.util.stream.IntStream;
 
 /**
  * Created by chendong on 2017/7/24.
  */
-public class Test {
+public class Test implements Serializable {
 
 
     static int[] arr = {2, 7, 8, 9, 3, 5, 6, 0, 1, 4};
@@ -95,7 +96,33 @@ public class Test {
     }
 
     public static void main(String[] args) throws Exception {
-        test1();
+
+        System.out.println(2);
+
+
+    }
+
+    private static void search(int search) {
+        int low = 0;
+        int high = arr.length - 1;
+        while (low <= high) {
+/*            if (search == high) {
+                System.out.println(high);
+                break;
+            }*/
+            if (search < low || search > high) {
+                break;
+            }
+            int mid = (low + high) / 2;
+            if (arr[mid] == search) {
+                System.out.println(mid);
+                break;
+            } else if (arr[mid] < search) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
     }
 
 }

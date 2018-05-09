@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class JedisClientTest {
 
-    static final String host = "localhost";
+    static final String host = "10.1.51.236";
     static final int defaultPort = 6379;
 
     public static void main(String[] args) {
@@ -28,9 +28,14 @@ public class JedisClientTest {
     }
 
     private static void JedisClientTest() {
-
         Jedis jedis = new Jedis(host, defaultPort);
-        System.out.println(jedis.get("test"));
+        if (jedis.setnx("test", "1") == 1) {
+            jedis.set("test", "this is a test");
+            System.out.println(jedis.get("test"));
+            jedis.del("test");
+        } else {
+            System.out.println("1");
+        }
         jedis.close();
     }
 

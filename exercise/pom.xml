@@ -28,4 +28,17 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>myCodeBase</groupId>
+                <artifactId>maven-plugin-test</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <configuration>
+                    <msg>CD!</msg>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
