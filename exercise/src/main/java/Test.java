@@ -1,8 +1,9 @@
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 /**
  * Created by chendong on 2017/7/24.
@@ -11,6 +12,24 @@ public class Test implements Serializable {
 
 
     static int[] arr = {2, 7, 8, 9, 3, 5, 6, 0, 1, 4};
+
+
+    static class T {
+        public List<String> getListIds() {
+            return listIds;
+        }
+
+        public void setListIds(List<String> listIds) {
+            this.listIds = listIds;
+        }
+
+        List<String> listIds = new ArrayList<>();
+    }
+
+
+    public static void main(String[] args) throws Exception {
+    }
+
 
     private static void swap(int i, int j, int[] arr) {
         int foo = arr[i];
@@ -95,12 +114,6 @@ public class Test implements Serializable {
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
 
-    public static void main(String[] args) throws Exception {
-
-        System.out.println(2);
-
-
-    }
 
     private static void search(int search) {
         int low = 0;

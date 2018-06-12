@@ -1,0 +1,24 @@
+group 'me.codebase'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'commons-lang:commons-lang:2.6'
+    compile 'com.google.guava:guava:23.0'
+    compile gradleApi()
+    compile localGroovy()
+    testCompile 'junit:junit:4.12'
+}
