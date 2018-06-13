@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Created by chendong on 2017/7/24.
@@ -28,6 +29,8 @@ public class Test implements Serializable {
 
 
     public static void main(String[] args) throws Exception {
+
+//        CompletableFuture.supplyAsync(()-> "1212").acceptEither()
     }
 
 
