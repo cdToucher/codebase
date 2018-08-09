@@ -5,7 +5,11 @@ package number2big;
  */
 public class Test {
 
+
+    /*
+    最佳线程数目 = （线程等待时间与线程CPU时间之比 + 1）* CPU数目
+     */
     public static void main(String[] args) {
-        System.out.println("build");
+        System.out.println(350 * 12);
     }
 }

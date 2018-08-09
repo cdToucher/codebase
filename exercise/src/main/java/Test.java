@@ -1,10 +1,10 @@
-import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
+import org.springframework.util.DigestUtils;
 
 import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * Created by chendong on 2017/7/24.
@@ -29,8 +29,9 @@ public class Test implements Serializable {
 
 
     public static void main(String[] args) throws Exception {
-
-//        CompletableFuture.supplyAsync(()-> "1212").acceptEither()
+        System.out.println("760befc1477093e9c7f9a585cb4812fb".length());
+        System.out.println("OdRDe9rhC6".length());
+        System.out.println("50QGliVxlP".length());
     }
 
 
