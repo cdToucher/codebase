@@ -1,4 +1,4 @@
-package me.codebase.java8.current;
+package me.codebase.java8.concurrent;
 
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
