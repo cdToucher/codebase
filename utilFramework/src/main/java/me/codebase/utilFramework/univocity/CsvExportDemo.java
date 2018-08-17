@@ -17,9 +17,6 @@ import java.util.stream.IntStream;
 public class CsvExportDemo {
 
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println("What the fuck!");
-        System.out.println("What the fuck!");
-        System.out.println("What the fuck!");
 
         Random luckyAss = new Random(System.currentTimeMillis());
 
