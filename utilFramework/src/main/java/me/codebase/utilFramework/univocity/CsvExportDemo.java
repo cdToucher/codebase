@@ -25,6 +25,8 @@ public class CsvExportDemo {
         CsvWriterSettings settings = new CsvWriterSettings();
         settings.setRowWriterProcessor(new BeanWriterProcessor<>(FlowerGirl.class));
         CsvWriter writer = new CsvWriter(stream, Charset.forName("UTF-8"), settings);
+
+        writer.writeRow("TEST-------------------------------------------------------------------");
         writer.writeHeaders();
         flowers.forEach(writer::processRecord);
         writer.close();

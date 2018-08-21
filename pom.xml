@@ -28,6 +28,7 @@
         <module>io</module>
         <module>runtime</module>
         <module>file</module>
+        <module>hbase</module>
     </modules>
 
     <properties>

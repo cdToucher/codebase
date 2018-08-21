@@ -10,7 +10,6 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  */
 public class AQSTest {
 
-
     // TODO: 2018/8/17  Make a demo
     private static final class Sync extends AbstractQueuedSynchronizer {
 
