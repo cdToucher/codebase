@@ -29,6 +29,7 @@
         <module>runtime</module>
         <module>file</module>
         <module>hbase</module>
+        <module>es</module>
     </modules>
 
     <properties>

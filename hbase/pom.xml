@@ -18,5 +18,9 @@
             <artifactId>hbase-client</artifactId>
             <version>1.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
     </dependencies>
 </project>
