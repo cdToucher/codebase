@@ -12,11 +12,12 @@ import java.util.List;
  */
 public class JedisClientTest {
 
-    static final String host = "10.1.51.236";
+    static final String host = "dev.config.duibar.com";
+    static final String pwsd = "duiba123";
     static final int defaultPort = 6379;
 
-    public static void main(String[] args) {
-        JedisClientTest();
+    public static void main(String[] args) throws InterruptedException {
+        JedisClientTest1();
     }
 
     private static void SharedJedisTest() {
@@ -25,6 +26,19 @@ public class JedisClientTest {
         ShardedJedis shardedJedis = new ShardedJedis(shards);
         System.out.println(shardedJedis.get("test"));
         shardedJedis.close();
+    }
+
+    private static void JedisClientTest1() throws InterruptedException {
+        JedisShardInfo shardInfo = new JedisShardInfo(host,defaultPort);
+        shardInfo.setPassword(pwsd);
+        try(Jedis jedis = new Jedis(shardInfo)) {
+            String value = jedis.set("test", "1", "nx", "ex", 5);
+            System.out.println(value);
+            Thread.sleep(4000);
+            jedis.close();
+            System.out.println(jedis.get("test"));
+        }
+
     }
 
     private static void JedisClientTest() {
