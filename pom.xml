@@ -30,6 +30,7 @@
         <module>file</module>
         <module>hbase</module>
         <module>es</module>
+        <module>mq</module>
     </modules>
 
     <properties>
@@ -203,6 +204,11 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>4.1.6.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>4.3.1</version>
             </dependency>
 
         </dependencies>
