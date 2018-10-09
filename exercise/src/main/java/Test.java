@@ -1,8 +1,4 @@
-import org.springframework.util.DigestUtils;
-
 import java.io.Serializable;
-import java.nio.charset.Charset;
-import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +25,11 @@ public class Test implements Serializable {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println("760befc1477093e9c7f9a585cb4812fb".length());
-        System.out.println("OdRDe9rhC6".length());
-        System.out.println("50QGliVxlP".length());
+        Object key = new Object();
+        System.out.println(key.hashCode());
+        System.out.println(key.hashCode() >>> 16);
+        int h;
+        System.out.println((h = key.hashCode()) ^ (h >>> 16));
     }
 
 

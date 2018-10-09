@@ -22,10 +22,4 @@ public class AtomicTest {
         });
     }
 
-    private static void test4AtomicBoolean() {
-        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-        service.submit(() -> {
-            atomicBoolean.getAndSet(false);
-        });
-    }
 }
