@@ -32,10 +32,9 @@ public class JedisClientTest {
         JedisShardInfo shardInfo = new JedisShardInfo(host,defaultPort);
         shardInfo.setPassword(pwsd);
         try(Jedis jedis = new Jedis(shardInfo)) {
-            String value = jedis.set("test", "1", "nx", "ex", 5);
+            String value = jedis.set("test", "1", "nx", "ex", 300);
             System.out.println(value);
             Thread.sleep(4000);
-            jedis.close();
             System.out.println(jedis.get("test"));
         }
 
