@@ -1,0 +1,67 @@
+{
+  "tuia_risk_dev": {
+    "mappings": {
+      "tb_risk_slot_city_statis": {
+        "_ttl": {
+          "enabled": true,
+          "default": "60d"
+        },
+        "properties": {
+          "app_id": {
+            "type": "long"
+          },
+          "city": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "click_count": {
+            "type": "long"
+          },
+          "ctr": {
+            "type": "double"
+          },
+          "curDate": {
+            "type": "long"
+          },
+          "cur_date": {
+            "type": "date",
+            "format": "strict_date_optional_time||epoch_millis"
+          },
+          "cvr": {
+            "type": "double"
+          },
+          "effect_pv": {
+            "type": "long"
+          },
+          "exposure_count": {
+            "type": "long"
+          },
+          "launch_count": {
+            "type": "long"
+          },
+          "participate_pv": {
+            "type": "long"
+          },
+          "participate_uv": {
+            "type": "long"
+          },
+          "promote_visit_pv": {
+            "type": "long"
+          },
+          "promote_visit_uv": {
+            "type": "long"
+          },
+          "sdk_uv": {
+            "type": "long"
+          },
+          "slot_id": {
+            "type": "long"
+          },
+          "visit_rate": {
+            "type": "double"
+          }
+        }
+      }
+    }
+  }
+}
