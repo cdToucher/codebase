@@ -6,6 +6,7 @@ import me.codebase.es.config.ElasticConfig;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.RangeQueryBuilder;
@@ -20,8 +21,10 @@ import java.util.stream.StreamSupport;
 
 public class Test {
 
+    static final String INDEX = "tb_risk_dimension_analysis";
+
     public static void main(String[] args) throws Exception {
-        SearchRequest searchRequest = new SearchRequest("tuia_risk_dev"); // 限制请求到某个索引上
+        SearchRequest searchRequest = new SearchRequest(INDEX); // 限制请求到某个索引上
         searchRequest.types("tb_risk_slot_city_statis"); // 限制请求的类别
         // 大多数的搜索参数被添加到 SearchSourceBuilder 。它为每个进入请求体的每个东西都提供 setter 方法。
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -31,22 +34,12 @@ public class Test {
         searchSourceBuilder.size(10);
         searchRequest.source(searchSourceBuilder);
 
-        //MatchQueryBuilder matchbuilder = QueryBuilders.matchQuery("message", keyword1 + " " + keyword2);
-        // 同时满足两个关键字
-        //matchbuilder.operator(Operator.AND);
-
         // 查询在时间区间范围内的结果
-        RangeQueryBuilder rangbuilder = QueryBuilders.rangeQuery("cur_date");
+        RangeQueryBuilder rangbuilder = QueryBuilders.rangeQuery("_type");
         String startDate = "2018-10-14";
         String endDate = "2018-10-24";
         rangbuilder.gte(startDate);
         rangbuilder.lte(endDate);
-        // 等同于bool，将两个查询合并
-/*        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
-        boolBuilder.must(QueryBuilders.matchPhraseQuery("slot_id", 151L));
-        boolBuilder.must(rangbuilder);
-        searchSourceBuilder.query(boolBuilder);*/
-        // 排序
         FieldSortBuilder fsb = SortBuilders.fieldSort("cur_date");
         fsb.order(SortOrder.DESC);
         searchSourceBuilder.sort(fsb);
