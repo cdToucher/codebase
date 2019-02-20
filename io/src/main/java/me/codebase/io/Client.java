@@ -18,10 +18,12 @@ public class Client implements Constants {
     }
 
     private static void client() throws IOException {
-        Socket socket = new Socket();
-        socket.connect(new InetSocketAddress("10.1.251.16", blockedIOPort));
-        OutputStream outputStream = socket.getOutputStream();
-        Resources.asByteSource(Resources.getResource(".gitignore")).copyTo(outputStream);
-        IOUtils.closeQuietly(outputStream);
+        OutputStream outputStream;
+        try (Socket socket = new Socket()) {
+            socket.connect(new InetSocketAddress("localhost", blockedIOPort));
+            outputStream = socket.getOutputStream();
+            Resources.asByteSource(Resources.getResource(".gitignore")).copyTo(outputStream);
+            IOUtils.closeQuietly(outputStream);
+        }
     }
 }
