@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,15 +24,57 @@ public class Test implements Serializable {
         List<String> listIds = new ArrayList<>();
     }
 
-
-    public static void main(String[] args) throws Exception {
-        Object key = new Object();
-        System.out.println(key.hashCode());
-        System.out.println(key.hashCode() >>> 16);
-        int h;
-        System.out.println((h = key.hashCode()) ^ (h >>> 16));
+    // a binary tree node.
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {
+        }
+        TreeNode(int val) {
+            this.val = val;
+        }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 
+    public static void main(String[] args) throws Exception {
+        int a =
+    }
+
+
+    private static boolean ifIntersect(int[] arrA, int[] arrB) {
+        if (arrA.length == 0 || arrB.length == 0)
+            return false;
+        else if (arrA.length <= 1 && arrB.length <= 1)
+            return false;
+        if (arrA[1] > arrB[0])
+        return true;
+        return false;
+    }
+
+    //最长上升子序集
+    private static void LIS() {
+        int[] arr = {10, 9, 2, 5, 3, 7, 101, 18, 1077};
+        // 0 <=n,m<arr.length  n<m
+        // Max{f(n,m)}
+        int max = 1;
+        int maxArr[] = new int[arr.length];
+        maxArr[0] = 1;
+        for (int i = 1; i < arr.length; i++) {
+            maxArr[i] = 1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (arr[j] < arr[i] && maxArr[i] <= maxArr[j]) {
+                    maxArr[i] = maxArr[j] + 1;
+                }
+            }
+        }
+        // find the max in the maxArr
+        System.out.println(Arrays.toString(maxArr));
+    }
 
     private static void swap(int i, int j, int[] arr) {
         int foo = arr[i];
